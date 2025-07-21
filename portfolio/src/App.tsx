@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Title} from "./components/Title";
 import {Navbar} from "./components/Navbar";
+import {Section} from "./components/Section";
 
 function App() {
   return (
@@ -23,6 +24,12 @@ function App() {
         </a>
       <Title title={"Portfolio"}/>
       </header>
+        <Section title={"First one"} backgroundColor={"#FFFFFF"} fontColor={"#000000"}>
+            I'm in the new section
+        </Section>
+        <Section title={"Second  one"} backgroundColor={"#000000"} fontColor={"#FFFFFF"}>
+            And that's an other one
+        </Section>
 
     </div>
   );

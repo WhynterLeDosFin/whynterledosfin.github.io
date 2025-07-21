@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './cssModules/Navbar.module.css';
+import styles from './cssModules/Navbar.module.scss';
 import {FaGithubSquare, FaLinkedin} from "react-icons/fa";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 
