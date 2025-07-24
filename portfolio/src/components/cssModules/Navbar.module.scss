@@ -1,10 +1,12 @@
+@import '../../styles/variables';
+
 .navbarContainer {
     display: flex;
     flex-direction: row;
     font-size: 0.7rem;
     font-family: Roboto Mono, serif;
     justify-content: start;
-    background-color: #00DC37;
+    background-color: $primary-color;
     width: 100%;
     position: sticky;
     top: 0;
@@ -15,17 +17,33 @@
     justify-content: start;
     width: 80%;
     font-weight: lighter;
-    margin: 1vmin 0;
+    //margin: 1vmin 0;
+    color: white;
 }
 
 .navbarSections h1{
-    margin: 0 2vmin;
+    margin: inherit;
+    padding: 1vmin 2vmin 1vmin 2vmin;
 }
+
+.navbarSections h1:hover{
+    color: $primary-color;
+    background-color: #FFFFFF;
+    transition: 0.7s;
+}
+
 
 .navbarNetworks{
     display: flex;
     justify-content: right;
     width: 20%;
+    a :hover{
+        animation: shaking 0.5s;
+    }
+}
+
+.networkIcon :hover{
+
 }
 
 .navbarNetworks > * {

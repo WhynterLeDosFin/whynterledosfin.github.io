@@ -1,7 +1,10 @@
+@import '../../styles/variables';
+
 .sectionTitle {
     text-align: start;
-    margin-left: 5vmin;
     font-size: 5vmin;
     font-weight: bold;
-    width: 100%;
+    max-width: 100%;
+    margin: inherit;
+    padding: $title-spacing 0 0 $title-spacing;
 }

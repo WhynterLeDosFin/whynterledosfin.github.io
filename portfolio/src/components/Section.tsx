@@ -4,13 +4,13 @@ import styles from './cssModules/Section.module.scss';
 interface SectionProps {
     title: string;
     children: React.ReactNode;
-    backgroundColor: string;
+    background: string;
     fontColor: string;
 }
 
-export const Section: React.FC<SectionProps> = ({ title, children, backgroundColor, fontColor }) => {
+export const Section: React.FC<SectionProps> = ({ title, children, background, fontColor }) => {
     return (
-        <section style={{ backgroundColor, color: fontColor }}>
+        <section style={{ background, color: fontColor }}>
             <p className={styles.sectionTitle}>{title}</p>
             <div className="sectionContent">
                 {children}
