@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.separator {
+  flex-shrink: 0;
+  background-color: $primary-color;
+  opacity: 0;
+  transform: scaleX(0);
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes verticalSlideIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .separator{
+    max-width: 0px !important;
+    max-height: 0px !important;
+  }
+}
