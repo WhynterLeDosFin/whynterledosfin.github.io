@@ -41,6 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .Picture-container {
@@ -61,6 +62,10 @@
     padding: 0px;
     border: black solid 0;
   }
+}
+
+.Typewriter-container {
+  padding: 2vmin;
 }
 
 // Reponsivity :
