@@ -4,6 +4,7 @@ import myPhoto from './assets/img/IMG_6461.jpg';
 import {Navbar} from "./components/Navbar";
 import {Section} from "./components/Section";
 import {theme} from "./styles/theme";
+import {Separator} from "./components/Separator";
 
 function App() {
   return (
@@ -26,20 +27,15 @@ function App() {
                        bienveillant.
                    </p>
                </div>
+                <Separator orientation="vertical" length="350px" thickness="3px" />
                 <div className="Intro-right">
                     <div className="Picture-container">
                     </div>
                 </div>
             </div>
-
-            <h1>Lorem ipsum h1</h1>
-            <p>And that's an other one</p>
-
         </Section>
-        <Section title={"Second one"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
+        <Section title={"Mes expériences"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
             <p>And that's an other one</p>
-            <p>And that's an other one</p>
-
         </Section>
 
     </div>
