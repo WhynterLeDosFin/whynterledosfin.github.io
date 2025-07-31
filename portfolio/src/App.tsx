@@ -5,6 +5,7 @@ import {Navbar} from "./components/Navbar";
 import {Section} from "./components/Section";
 import {theme} from "./styles/theme";
 import {Separator} from "./components/Separator";
+import {Typewriter} from "./components/Typewriter";
 
 function App() {
   return (
@@ -22,14 +23,18 @@ function App() {
                        performantes simplifiant les tâches de mes
                        collaborateurs / clients. Je recherche aujourd’hui
                        une structure me permettant de faire bon usage de
-                       mes compétences et de les y développer davantage
+                       mes compétences et de continuer de les y développer
                        dans un cadre dynamique, collaboratif et
                        bienveillant.
                    </p>
+                    <p>Je suis actuellement à l'écoute de nouvelles opportunités.
+                    </p>
                </div>
-                <Separator orientation="vertical" length="350px" thickness="3px" />
+                <Separator orientation="vertical" length="400px" thickness="3px" />
                 <div className="Intro-right">
-                    <div className="Picture-container">
+                    <div className="Picture-container"/>
+                    <div className="Typewriter-container">
+                        <Typewriter texts={["j'ai 27 ans","J'habite à Lille","J'aime développer","J'adore conceptualiser","J'aime le défi (̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄","Je suis créatif","j'aime bien la photo aussi :p"]} />
                     </div>
                 </div>
             </div>
@@ -37,7 +42,6 @@ function App() {
         <Section title={"Mes expériences"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
             <p>And that's an other one</p>
         </Section>
-
     </div>
   );
 }

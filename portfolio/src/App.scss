@@ -41,6 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .Picture-container {
@@ -49,7 +50,7 @@
   border-radius: 8px;
   height: 50vh;
   z-index: 1;
-  box-shadow: 0px 0px 3px black inset;
+  box-shadow: 0px 0px 15px black inset;
   background-image: url("./assets/img/IMG_6461.jpg");
   background-size: cover;
 
@@ -61,6 +62,10 @@
     padding: 0px;
     border: black solid 0;
   }
+}
+
+.Typewriter-container {
+  padding: 2vmin;
 }
 
 // Reponsivity :
