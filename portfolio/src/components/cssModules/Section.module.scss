@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.sectionTitle {
+    text-align: start;
+    font-size: $title-font-size;
+    font-weight: $title-font-weight;
+    max-width: 100%;
+    margin: inherit;
+    padding: $title-spacing 0 0 $title-spacing;
+    //color: $light-font-color;
+    color: $gradient-background;
+}

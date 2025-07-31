@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+
+.navbarContainer {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.7rem;
+    font-family: Roboto Mono, serif;
+    justify-content: start;
+    background: radial-gradient(circle,rgba(54, 91, 255, 1) 0%, rgba(34, 72, 157, 1) 50%, rgba(38, 76, 176, 1) 100%);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 20px black;
+    z-index: 10;
+}
+
+.navbarSections{
+    display: flex;
+    justify-content: start;
+    width: 80%;
+    font-weight: lighter;
+    //margin: 1vmin 0;
+    color: white;
+}
+
+.navbarSections h1{
+    margin: inherit;
+    padding: 1vmin 2vmin 1vmin 2vmin;
+}
+
+.navbarSections h1:hover{
+    color: $primary-color;
+    background-color: #FFFFFF;
+    transition: 0.7s;
+    box-shadow: 0px 1px 3px black inset;
+}
+
+
+.navbarNetworks{
+    display: flex;
+    justify-content: right;
+    width: 20%;
+    a :hover{
+        animation: shaking 0.5s;
+    }
+}
+
+.networkIcon :hover{
+
+}
+
+.navbarNetworks > * {
+    margin: 0.25vmin 0.25vmin;
+}

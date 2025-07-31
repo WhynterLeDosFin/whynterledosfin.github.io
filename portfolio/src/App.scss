@@ -1,0 +1,80 @@
+@import './styles/variables';
+
+.App {
+  display: inherit;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.Intro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5%;
+  padding: $screen-side-spacing;
+  flex-wrap: wrap;
+}
+
+.Intro-left{
+  width: 60%;
+  text-align: justify;
+  p{
+    font-size: calc(10px + 2vmin);
+  }
+  h1{
+    font-size: calc(15px + 2vmin);
+    color: $primary-color;
+  }
+}
+
+.Intro-right {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Picture-container {
+  border: black solid 0;
+  width: 100%;
+  border-radius: 8px;
+  height: 50vh;
+  z-index: 1;
+  box-shadow: 0px 0px 15px black inset;
+  background-image: url("./assets/img/IMG_6461.jpg");
+  background-size: cover;
+
+  img{
+    width: 100%;
+    max-height: 100%;
+    z-index: -2;
+    border-radius: 8px;
+    padding: 0px;
+    border: black solid 0;
+  }
+}
+
+.Typewriter-container {
+  padding: 2vmin;
+}
+
+// Reponsivity :
+@media (max-width: 768px) {
+  .Intro-container {
+    flex-direction: column;
+
+    .Intro-left, .Intro-right {
+      width: 90%;
+    }
+  }
+}
