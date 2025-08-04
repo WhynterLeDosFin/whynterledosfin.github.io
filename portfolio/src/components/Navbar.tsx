@@ -8,8 +8,8 @@ export const Navbar: React.FC = () => {
         <div className={styles.navbarContainer}>
             <div className={styles.navbarSections}>
                 <h1 className={styles.title}>{"Présentation"}</h1>
-                <h1 className={styles.title}>{"Expériences"}</h1>
                 <h1 className={styles.title}>{"Formations"}</h1>
+                <h1 className={styles.title}>{"Expériences"}</h1>
                 <h1 className={styles.title}>{"Réalisations"}</h1>
                 <h1 className={styles.title}>{"Métriques"}</h1>
                 <h1 className={styles.title}>{"Projets"}</h1>
