@@ -51,6 +51,24 @@
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
     color: white;
     flex-shrink: 1;
+
+    .diploma{
+      font-size: 3vmin;
+      font-weight: bold;
+      color: $primary-color;
+    }
+    .school{
+      font-size: 2.5vmin;
+      font-weight: bold;
+    }
+    .date{
+      font-size: 2.2vmin;
+      font-weight: bolder;
+    }
+    .description{
+      font-size: 2vmin;
+      font-weight: normal;
+    }
   }
 
   .imageWrapper {

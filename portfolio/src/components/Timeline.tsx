@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import styles from './cssModules/Timeline.module.scss';
 
 interface TimelineItem {
-    title: string;
+    diploma: string;
+    school: string;
     description: string;
     image: string;
+    date: string;
 }
 
 interface TimelineProps {
@@ -44,11 +46,13 @@ export const Timeline: React.FC<TimelineProps> = ({ items }) => {
                         className={`${styles.item} ${isLeft ? styles.left : styles.right}`}
                     >
                         <div className={styles.content}>
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
+                            <p className={styles.diploma}>{item.diploma}</p>
+                            <p className={styles.school}>{item.school}</p>
+                            <p className={styles.date}>{item.date}</p>
+                            <p className={styles.description}>{item.description}</p>
                         </div>
                         <div className={styles.imageWrapper}>
-                            <img src={item.image} alt={item.title} />
+                            <img src={item.image} alt={item.diploma} />
                         </div>
                         <span className={styles.point}></span>
                     </div>
