@@ -7,13 +7,13 @@ export const Navbar: React.FC = () => {
     return (
         <div className={styles.navbarContainer}>
             <div className={styles.navbarSections}>
-                <h1 className={styles.title}>{"Présentation"}</h1>
-                <h1 className={styles.title}>{"Expériences"}</h1>
-                <h1 className={styles.title}>{"Formations"}</h1>
-                <h1 className={styles.title}>{"Réalisations"}</h1>
-                <h1 className={styles.title}>{"Métriques"}</h1>
-                <h1 className={styles.title}>{"Projets"}</h1>
-                <h1 className={styles.title}>{"Contact"}</h1>
+                <a href="#presentation" className={styles.title}>Présentation</a>
+                <a href="#formations" className={styles.title}>Formations</a>
+                <a href="#experiences" className={styles.title}>Expériences</a>
+                <a href="#realisations" className={styles.title}>Réalisations</a>
+                <a href="#metriques" className={styles.title}>Métriques</a>
+                <a href="#projets" className={styles.title}>Projets</a>
+                <a href="#contact" className={styles.title}>Contact</a>
             </div>
             <div className={styles.navbarNetworks}>
                 <a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer">
