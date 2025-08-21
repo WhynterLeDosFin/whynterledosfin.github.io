@@ -19,29 +19,32 @@ html {
   }
 }
 
+/* ✅ Mobile-first */
 .Intro-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; // mobile en colonne
   align-items: center;
-  gap: 5%;
+  gap: 1.5rem;
   padding: $screen-side-spacing;
-  flex-wrap: wrap;
 }
 
-.Intro-left{
-  width: 60%;
+.Intro-left,
+.Intro-right {
+  width: 90%; // mobile prend presque toute la largeur
   text-align: justify;
-  p{
+}
+
+.Intro-left {
+  p {
     font-size: calc(10px + 2vmin);
   }
-  h1{
+  h1 {
     font-size: calc(15px + 2vmin);
     color: $primary-color;
   }
 }
 
 .Intro-right {
-  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,12 +61,12 @@ html {
   background-image: url("./assets/img/IMG_6461.jpg");
   background-size: cover;
 
-  img{
+  img {
     width: 100%;
     max-height: 100%;
     z-index: -2;
     border-radius: 8px;
-    padding: 0px;
+    padding: 0;
     border: black solid 0;
   }
 }
@@ -72,13 +75,21 @@ html {
   padding: 2vmin;
 }
 
-// Reponsivity :
-@media (max-width: 768px) {
+/* ✅ Desktop / tablette (≥768px) */
+@media (min-width: 768px) {
   .Intro-container {
-    flex-direction: column;
+    flex-direction: row; // en ligne sur desktop
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    flex-wrap: wrap;
+  }
 
-    .Intro-left, .Intro-right {
-      width: 90%;
-    }
+  .Intro-left {
+    width: 60%;
+  }
+
+  .Intro-right {
+    width: 25%;
   }
 }
