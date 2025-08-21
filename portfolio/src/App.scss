@@ -19,10 +19,9 @@ html {
   }
 }
 
-/* ✅ Mobile-first */
 .Intro-container {
   display: flex;
-  flex-direction: column; // mobile en colonne
+  flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   padding: $screen-side-spacing;
@@ -30,7 +29,7 @@ html {
 
 .Intro-left,
 .Intro-right {
-  width: 90%; // mobile prend presque toute la largeur
+  width: 90%;
   text-align: justify;
 }
 
@@ -75,10 +74,9 @@ html {
   padding: 2vmin;
 }
 
-/* ✅ Desktop / tablette (≥768px) */
 @media (min-width: 768px) {
   .Intro-container {
-    flex-direction: row; // en ligne sur desktop
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 5%;

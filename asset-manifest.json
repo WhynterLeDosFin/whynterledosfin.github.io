@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.ecd79b6e.css",
-    "main.js": "/static/js/main.cb20660f.js",
+    "main.css": "/static/css/main.4e0d4e91.css",
+    "main.js": "/static/js/main.95708a28.js",
     "static/js/453.ad7768ec.chunk.js": "/static/js/453.ad7768ec.chunk.js",
     "static/media/IMG_6461.jpg": "/static/media/IMG_6461.3bb69a695fca270b9a63.jpg",
     "static/media/La-Providence.png": "/static/media/La-Providence.d7e779f916a939f27d22.png",
     "static/media/JUNIA-ISEN.jpg": "/static/media/JUNIA-ISEN.1fb8ca2e42815d46a8a2.jpg",
     "static/media/IUT-Amiens.jpeg": "/static/media/IUT-Amiens.5138b305726d4c647cce.jpeg",
     "index.html": "/index.html",
-    "main.ecd79b6e.css.map": "/static/css/main.ecd79b6e.css.map",
-    "main.cb20660f.js.map": "/static/js/main.cb20660f.js.map",
+    "main.4e0d4e91.css.map": "/static/css/main.4e0d4e91.css.map",
+    "main.95708a28.js.map": "/static/js/main.95708a28.js.map",
     "453.ad7768ec.chunk.js.map": "/static/js/453.ad7768ec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecd79b6e.css",
-    "static/js/main.cb20660f.js"
+    "static/css/main.4e0d4e91.css",
+    "static/js/main.95708a28.js"
   ]
 }
