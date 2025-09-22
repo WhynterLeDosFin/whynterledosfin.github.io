@@ -9,6 +9,7 @@ import {theme} from "./styles/theme";
 import {Separator} from "./components/Separator";
 import {Typewriter} from "./components/Typewriter";
 import {Timeline} from "./components/Timeline";
+import Choices from "./components/Choices";
 
 const academicSteps = [
     {
@@ -71,9 +72,9 @@ function App() {
                 <Timeline items={academicSteps} />
             </div>
         </Section>
-        <Section title={"Mes expériences"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
-            <div id="experiences">
-                <p>Coming soon...</p>
+        <Section title={"Ce portfolio"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
+            <div id="CePortfolio">
+                <Choices></Choices>
             </div>
         </Section>
     </div>

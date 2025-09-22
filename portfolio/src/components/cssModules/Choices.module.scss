@@ -1,0 +1,112 @@
+@import "../../styles/variables";
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 90%;
+}
+
+// Conteneur des bulles + flaque
+.bubblesWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center; // pour centrer verticalement les bulles
+  gap: 25rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  min-height: 560px; // ✅ force un espace pour la flaque
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 52%;
+    transform: translateX(-50%) scale(0);
+    width: 100%;
+    min-height: 846px;
+    background: linear-gradient(
+                    135deg,
+                    rgba(54, 91, 255, 0.7),
+                    rgba(34, 72, 157, 0.6),
+                    rgba(38, 76, 176, 0.5)
+    );
+    clip-path: path("M 233.567 481.833 C 278.954 373.6 61.5 524.12 26.8865 508.999 C -7.72703 493.878 -9.17035 410.978 26.8864 324.766 C 62.7154 239.098 165.453 134.435 248.583 149.449 C 278.702 154.889 273.118 152.425 296 169.499 C 305.602 177.26 309.095 193.109 320.155 198.348 C 434.171 252.355 732.5 156.813 753.386 47.2653 C 774.273 -62.2822 967.5 43 998.5 149.499 C 1029.5 255.999 1119 154.049 1133.5 217.549 C 1148 281.049 1502 47.2653 1436 177.999 C 1370 308.732 1432.22 364.742 1337.5 429.999 C 1242.78 495.255 1100.5 564.499 1133.5 382.499 C 1166.5 200.499 613.5 570.499 565 429.999 C 516.5 289.499 515.677 429.999 454.5 429.999 C 393.323 429.999 464.168 503.635 430 514.499 C 376.211 531.6 188.181 590.066 233.567 481.833 Z");
+    transition: transform 0.8s ease-in-out;
+    z-index: 1;
+    border-radius: 40%;
+  }
+
+
+  &.expanded::before {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+// Bulles
+.bubble {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #0d2638;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+
+  img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+
+  // Contour dégradé
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00f, #0ff, #00f);
+    z-index: -1;
+    opacity: 0.5;
+  }
+}
+
+// Zone info techno
+.techInfo {
+  max-width: 90%;
+  background: rgba(13, 38, 56, 0.9);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: left;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+// Desktop : agrandissement de la flaque + largeur texte
+@media (min-width: 768px) {
+  .bubblesWrapper.expanded::before {
+    height: 350px;
+  }
+
+  .techInfo {
+    max-width: 60%;
+  }
+}
