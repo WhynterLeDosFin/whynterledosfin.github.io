@@ -4,54 +4,79 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  width: 90%;
+  gap: 100px;
+  padding: 2rem 0 2rem 0;
+  width: 100%;
+  min-height: 30rem;
 }
 
-// Conteneur des bulles + flaque
-.bubblesWrapper {
+.wrapper {
   position: relative;
-  width: 100%;
+  width: 80%;
   display: flex;
-  margin: auto;
   justify-content: center;
-  align-items: center; // pour centrer verticalement les bulles
-  gap: 25rem;
-  flex-wrap: wrap;
-  padding: 2rem;
-  min-height: 560px; // ✅ force un espace pour la flaque
+  align-items: center;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 52%;
+.fluidMask {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fluidMask.open {
+  animation: liquidOpen 2s ease forwards;
+}
+
+.fluidMask.close {
+  animation: liquidClose 2s ease forwards;
+}
+
+@keyframes liquidOpen {
+  0% {
     transform: translateX(-50%) scale(0);
-    width: 100%;
-    min-height: 846px;
-    background: linear-gradient(
-                    135deg,
-                    rgba(54, 91, 255, 0.7),
-                    rgba(34, 72, 157, 0.6),
-                    rgba(38, 76, 176, 0.5)
-    );
-    clip-path: path("M 233.567 481.833 C 278.954 373.6 61.5 524.12 26.8865 508.999 C -7.72703 493.878 -9.17035 410.978 26.8864 324.766 C 62.7154 239.098 165.453 134.435 248.583 149.449 C 278.702 154.889 273.118 152.425 296 169.499 C 305.602 177.26 309.095 193.109 320.155 198.348 C 434.171 252.355 732.5 156.813 753.386 47.2653 C 774.273 -62.2822 967.5 43 998.5 149.499 C 1029.5 255.999 1119 154.049 1133.5 217.549 C 1148 281.049 1502 47.2653 1436 177.999 C 1370 308.732 1432.22 364.742 1337.5 429.999 C 1242.78 495.255 1100.5 564.499 1133.5 382.499 C 1166.5 200.499 613.5 570.499 565 429.999 C 516.5 289.499 515.677 429.999 454.5 429.999 C 393.323 429.999 464.168 503.635 430 514.499 C 376.211 531.6 188.181 590.066 233.567 481.833 Z");
-    transition: transform 0.8s ease-in-out;
-    z-index: 1;
-    border-radius: 40%;
   }
-
-
-  &.expanded::before {
+  60% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  80% {
+    transform: translateX(-50%) scale(0.95);
+  }
+  100% {
     transform: translateX(-50%) scale(1);
   }
 }
 
-// Bulles
+@keyframes liquidClose {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) scale(0);
+  }
+}
+
+.bubblesWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 27.5%;
+  width: 100%;
+  flex-wrap: wrap;
+  min-height: clamp(220px, 27em, 600px);
+  //min-height: 27em;
+  z-index: 2;
+}
+
 .bubble {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: #0d2638;
   display: flex;
@@ -59,27 +84,36 @@
   align-items: center;
   cursor: pointer;
   position: relative;
-  z-index: 2;
+  transition: transform 0.2s ease;
 
   img {
-    width: 80%;
-    height: 80%;
+    width: 85%;
+    height: 85%;
     object-fit: contain;
   }
 
-  // Contour dégradé
   &::before {
     content: "";
     position: absolute;
-    inset: -5px;
+    inset: -4px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #00f, #0ff, #00f);
+    background: radial-gradient(circle, rgba(111, 131, 232, 1) 0%, rgba(149, 68, 219, 1) 50%, rgba(255, 125, 151, 1) 100%);
     z-index: -1;
     opacity: 0.5;
+    transition: background 0.3s ease, opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    background: white;
+    opacity: 1;
+  }
+
+  &.active::before {
+    background: white;
+    opacity: 1;
   }
 }
 
-// Zone info techno
 .techInfo {
   max-width: 90%;
   background: rgba(13, 38, 56, 0.9);
@@ -88,6 +122,7 @@
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
   color: white;
   text-align: left;
+  z-index: 3;
 
   h3 {
     font-size: 1.5rem;
@@ -100,13 +135,47 @@
   }
 }
 
-// Desktop : agrandissement de la flaque + largeur texte
-@media (min-width: 768px) {
-  .bubblesWrapper.expanded::before {
-    height: 350px;
-  }
+.gradientRect {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
 
+.gradientRect.visible {
+  opacity: 1;
+}
+
+
+@media (min-width: 768px) {
   .techInfo {
     max-width: 60%;
+  }
+  .bubble {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #0d2638;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+
+    img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(111, 131, 232, 1) 0%, rgba(149, 68, 219, 1) 50%, rgba(255, 125, 151, 1) 100%);
+      z-index: -1;
+      opacity: 0.5;
+      transition: background 0.3s ease, opacity 0.3s ease;
+    }
   }
 }

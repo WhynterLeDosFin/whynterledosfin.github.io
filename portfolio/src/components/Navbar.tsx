@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
             <div className={styles.navbarSections}>
                 <a href="#presentation">Présentation</a>
                 <a href="#formations">Formations</a>
-                <a href="#CePortfolio">Ce portfolio</a>
+                <a href="#CePortfolio">Portfolio</a>
                 <a href="#experiences">Expériences</a>
                 <a href="#realisations">Réalisations</a>
                 <a href="#metriques">Métriques</a>
