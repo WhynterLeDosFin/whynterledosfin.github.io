@@ -10,6 +10,7 @@ import {Separator} from "./components/Separator";
 import {Typewriter} from "./components/Typewriter";
 import {Timeline} from "./components/Timeline";
 import Choices from "./components/Choices";
+import ProgressIndicator from "./components/ProgressIndicator";
 
 const academicSteps = [
     {
@@ -74,7 +75,12 @@ function App() {
         </Section>
         <Section title={"Ce portfolio"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
             <div id="CePortfolio">
-                <Choices></Choices>
+                <div className="Choices">
+                    <Choices/>
+                </div>
+                <div className="Progress">
+                    <ProgressIndicator progress={40} strokeWidth={20} duration={1500}/>
+                </div>
             </div>
         </Section>
     </div>

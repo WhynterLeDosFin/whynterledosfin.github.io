@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.circle {
+  --progress: 0%;
+  --stroke: 12px;
+
+  position: relative;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+
+  background: conic-gradient(
+                  $primary-color var(--progress),
+                  rgba(0, 0, 0, 0.15) var(--progress)
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  inset: var(--stroke);
+  background: white;
+  border-radius: 50%;
+}
+
+.label {
+  position: relative;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  font-weight: bold;
+  color: $dark-font-color;
+}
