@@ -71,7 +71,15 @@ html {
 }
 
 .Typewriter-container {
-  padding: 2vmin;
+  margin: 2vmin 0;
+}
+
+.Choices{
+  width: 100%;
+}
+
+.Progress{
+  width: 100%;
 }
 
 @media (min-width: 768px) {
