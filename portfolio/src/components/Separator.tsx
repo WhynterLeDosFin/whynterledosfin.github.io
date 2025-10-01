@@ -3,10 +3,10 @@ import styles from './cssModules/Separator.module.scss';
 
 interface SeparatorProps {
     orientation?: 'horizontal' | 'vertical';
-    thickness?: string;         // ex: '2px'
-    length?: string;            // ex: '80%', '100px'
-    color?: string;             // ex: '#FF0000' ou une variable CSS
-    margin?: string;            // ex: '2rem auto'
+    thickness?: string;
+    length?: string;
+    color?: string;
+    margin?: string;
 }
 
 export const Separator: React.FC<SeparatorProps> = ({
@@ -23,14 +23,14 @@ export const Separator: React.FC<SeparatorProps> = ({
                 height: thickness,
                 backgroundColor: color,
                 margin: margin,
-                transformOrigin: 'left', // pour que l'animation parte de la gauche
+                transformOrigin: 'left',
             }
             : {
                 height: length,
                 width: thickness,
                 backgroundColor: color,
                 margin: margin,
-                transformOrigin: 'top', // pour que l'animation parte du haut
+                transformOrigin: 'top',
                 animationName: styles.verticalSlideIn,
             };
 

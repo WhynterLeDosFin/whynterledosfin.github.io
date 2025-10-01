@@ -1,0 +1,193 @@
+@import "../../styles/variables";
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 2rem 0;
+  width: 100%;
+  min-height: 30rem;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1500 / 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fluidMask {
+  position: absolute;
+  top: 0;
+  left: 52%;
+  transform: translateX(-50%) scale(0);
+  width: 96%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fluidMask.open {
+  animation: liquidOpen 2s ease forwards;
+}
+
+.fluidMask.close {
+  animation: liquidClose 2s ease forwards;
+}
+
+@keyframes liquidOpen {
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+  60% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  80% {
+    transform: translateX(-50%) scale(0.95);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes liquidClose {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) scale(0);
+  }
+}
+
+.bubblesWrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.bubble {
+  width: 10%;
+  border-radius: 50%;
+  background: #0d2638;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: none;
+    z-index: -1;
+    opacity: 0.5;
+    transition: background 0.3s ease, opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    background: white;
+    opacity: 1;
+  }
+
+  &.active::before {
+    background: white;
+    opacity: 1;
+  }
+}
+
+.techInfo {
+  max-width: 90%;
+  background: rgba(13, 38, 56, 0.95);
+  padding: 3%;
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  color: white;
+  z-index: 3;
+  overflow: hidden;
+  text-align: justify;
+  opacity: 0;
+  transition: max-height 600ms ease, opacity 450ms ease;
+  will-change: max-height, opacity;
+
+
+  h1 {
+    margin: 0 0 0.4rem 0;
+    font-size: 2rem;
+    color: white;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.gradientRect {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.gradientRect.visible {
+  opacity: 1;
+}
+
+
+@media (min-width: 768px) {
+  .techInfo {
+    max-width: 60%;
+  }
+  .bubblesWrapper{
+    gap: 30%;
+  }
+  .bubble {
+    width: 6%;
+    height: 100%;
+    border-radius: 50%;
+    background: #0d2638;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.5;
+      transition: background 0.3s ease, opacity 0.3s ease;
+    }
+  }
+}
