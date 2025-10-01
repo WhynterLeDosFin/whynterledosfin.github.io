@@ -94,10 +94,9 @@
   }
 }
 
-/* ✅ Version tablette/desktop */
 @media (min-width: 768px) {
   .timeline::before {
-    left: 50%; // ligne centrale
+    left: 50%;
     transform: translateX(-50%);
   }
 

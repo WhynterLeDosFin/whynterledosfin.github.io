@@ -40,7 +40,6 @@ function App() {
     return (
     <div className="App">
     <Navbar/>
-
         <Section title={"Bienvenue sur mon portfolio !"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
             <div className="Intro-container" id="presentation">
                 <div className="Intro-left">
