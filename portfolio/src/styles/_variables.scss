@@ -8,10 +8,13 @@ $dark-font-color: #0D2638;
 $light-font-color: #FFFFFF;
 $gradient-background: linear-gradient(0deg,rgba(13, 38, 56, 1) 0%, rgba(22, 60, 97, 1) 100%);
 $gradient-background-reversed: linear-gradient(0deg,rgba(22, 60, 97, 1) 0%, rgba(13, 38, 56, 1) 100%);
+$gradient-conic-version: conic-gradient(rgba(13, 38, 56, 1) 0deg, rgba(22, 60, 97, 1) 360deg);
 
 
-$title-font-size: 3.5rem;
-$paragraph-font-size: 1rem;
+
+$title-font-size: calc(15px + 5vmin);
+
+$paragraph-font-size: calc(8px + 1vmin);
 $hover-font-size: 1.2rem;
 
 $title-font-weight: bold;
