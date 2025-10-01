@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./cssModules/ProgressCircle.module.scss";
 
 interface ProgressCircleProps {
@@ -16,8 +16,9 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({
                                                        }) => {
     const [displayed, setDisplayed] = useState(0);
     const [animatedProgress, setAnimatedProgress] = useState(0);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
 
-    useEffect(() => {
+    const runAnimation = () => {
         let start = 0;
         const step = () => {
             start += 16;
@@ -32,10 +33,33 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({
             }
         };
         requestAnimationFrame(step);
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        runAnimation(); // 🔄 relance à chaque apparition
+                    } else {
+                        // reset quand on sort de la zone (facultatif)
+                        setDisplayed(0);
+                        setAnimatedProgress(0);
+                    }
+                });
+            },
+            { threshold: 0.4 }
+        );
+
+        if (wrapperRef.current) {
+            observer.observe(wrapperRef.current);
+        }
+
+        return () => observer.disconnect();
     }, [progress, duration]);
 
     return (
-        <div className={`${styles.wrapper} ${className}`}>
+        <div ref={wrapperRef} className={`${styles.wrapper} ${className}`}>
             <div
                 className={styles.circle}
                 style={

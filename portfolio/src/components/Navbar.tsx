@@ -49,13 +49,13 @@ export const Navbar: React.FC = () => {
             {isOpen && <div className={styles.overlay} onClick={closeMenu}></div>}
 
             <div className={styles.navbarNetworks}>
-                <a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/armel-ranaldi" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin size={28} color="#FFFFFF" />
                 </a>
-                <a href="https://github.com/ton-profil" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/WhynterLeDosFin" target="_blank" rel="noopener noreferrer">
                     <FaGithubSquare size={28} color="#FFFFFF" />
                 </a>
-                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/cv.pdf" download="Armel_RANALDI_CV.pdf">
                     <HiOutlineDocumentDownload size={28} color="#FFFFFF" />
                 </a>
             </div>
