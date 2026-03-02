@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import './App.scss';
 import LaProvidence from './assets/img/La-Providence.png';
 import IUT from './assets/img/IUT-Amiens.jpeg';
@@ -11,6 +11,7 @@ import {Typewriter} from "./components/Typewriter";
 import {Timeline} from "./components/Timeline";
 import Choices from "./components/Choices";
 import ProgressIndicator from "./components/ProgressIndicator";
+import Works from "./components/Works";
 
 const academicSteps = [
     {
@@ -82,6 +83,9 @@ function App() {
                     <ProgressIndicator progress={37.5} strokeWidth={20} duration={1500}/>
                 </div>
             </div>
+        </Section>
+        <Section title={"Réalisations"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
+            <Works/>
         </Section>
     </div>
   );
