@@ -11,6 +11,8 @@ interface ModalProps {
         opportunities: {
             id: string;
             name: string;
+            date?: string;
+            contractType?: string;
             projects: { id: string; title: string; description: string }[];
         }[];
     } | null;
@@ -58,6 +60,7 @@ const Modal: React.FC<ModalProps> = ({
                         <div className={styles.scrollArea}>
                             <img src={tech.logo} alt={tech.name} className={styles.logo} />
                             <h1 className="text-3xl font-bold mb-4">{tech.name}</h1>
+
                             <div className={styles.opportunites}>
                                 <h3>Expériences & Projets</h3>
                                 <div className={styles.logos}>
@@ -89,6 +92,12 @@ const Modal: React.FC<ModalProps> = ({
                                         exit={{ opacity: 0, x: -20 }}
                                         transition={{ duration: 0.2 }}
                                     >
+                                        {(opportunity.date || opportunity.contractType) && (
+                                            <div className={styles.opportunityMeta}>
+                                                {opportunity.date && <p><strong>Période:</strong> {opportunity.date}</p>}
+                                                {opportunity.contractType && <p><strong>Contrat:</strong> {opportunity.contractType}</p>}
+                                            </div>
+                                        )}
                                         {opportunity.projects.map((p) => {
                                             const isExpanded = expandedProjectId === p.id;
                                             return (

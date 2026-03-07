@@ -4,7 +4,6 @@
   touch-action: pan-y;
   display: block;
   position: relative;
-  /* Add a mask to fade out edges and focus on center */
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
@@ -23,7 +22,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Removed transition to prevent 'tilt' during repositioning and improve performance */
   cursor: pointer;
 }
 
@@ -59,7 +57,6 @@
   text-align: center;
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
   .carouselWrapper {
     max-width: 100%;
