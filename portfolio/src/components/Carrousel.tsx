@@ -7,8 +7,8 @@ interface CarrouselProps {
     onSelect: (item: Technology) => void;
 }
 
-const FRICTION = 0.94;
-const SNAP_STRENGTH = 0.1;
+const FRICTION = 0.88;
+const SNAP_STRENGTH = 0.05;
 
 const Carrousel: React.FC<CarrouselProps> = ({ items, onSelect }) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -175,12 +175,12 @@ const Carrousel: React.FC<CarrouselProps> = ({ items, onSelect }) => {
     const onWheel = useCallback((e: WheelEvent) => {
         e.preventDefault();
         const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-        velocity.current += delta * -0.3;
+        velocity.current += delta * -0.1;
         if (!raf.current) raf.current = requestAnimationFrame(animate);
     }, []);
 
     const playIntroAnimation = () => {
-        velocity.current = -20 - Math.random() * 10;
+        velocity.current = -50 - Math.random() * 20;
         if (!raf.current) raf.current = requestAnimationFrame(animate);
     };
 
