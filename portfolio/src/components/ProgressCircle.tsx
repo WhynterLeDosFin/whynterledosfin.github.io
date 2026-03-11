@@ -40,9 +40,8 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        runAnimation(); // 🔄 relance à chaque apparition
+                        runAnimation();
                     } else {
-                        // reset quand on sort de la zone (facultatif)
                         setDisplayed(0);
                         setAnimatedProgress(0);
                     }
