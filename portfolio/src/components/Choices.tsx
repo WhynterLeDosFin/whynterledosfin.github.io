@@ -153,7 +153,7 @@ const Choices: React.FC = () => {
 
     return (
         <div className={styles.choices}>
-            <div className={styles.wrapper}>
+            <div className={`${styles.wrapper} ${mountedTech ? styles.isOpen : ""}`}>
                 <svg
                     className={`${styles.fluidMask} ${mountedTech ? styles.open : styles.close}`}
                     viewBox="0 0 1500 600"
