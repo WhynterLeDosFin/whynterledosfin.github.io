@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import styles from "./cssModules/Carrousel.module.scss";
-import type { Technology } from "./Works";
+import type { Technology } from "../assets/data/technologies";
 
 interface CarrouselProps {
     items: Technology[];
