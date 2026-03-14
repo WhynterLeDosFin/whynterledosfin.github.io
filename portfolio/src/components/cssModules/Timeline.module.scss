@@ -11,10 +11,12 @@
     content: '';
     position: absolute;
     top: 0;
-    left: -2%;
+    left: 50%;
     width: 4px;
     height: 100%;
     background-color: $primary-color;
+    z-index: 1;
+    display: none;
   }
 }
 
@@ -82,28 +84,30 @@
   }
 
   .point {
+    display: none;
     position: absolute;
     top: 0;
-    left: -2%;
+    left: 50%;
     width: 20px;
     height: 20px;
     background-color: $primary-color;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 2;
   }
 }
 
 @media (min-width: 768px) {
   .timeline::before {
-    left: 50%;
+    display: block;
     transform: translateX(-50%);
   }
 
   .item {
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    gap: 8rem;
 
     &.left {
       flex-direction: row;
@@ -114,17 +118,20 @@
     }
 
     .content {
-      width: clamp(200px, 40%, 50%);
+      width: 40%;
+      margin: 0;
     }
 
     .imageWrapper {
-      width: clamp(150px, 35%, 50%);
+      width: 40%;
+      margin: 0;
       img {
         max-height: 13vmin;
       }
     }
 
     .point {
+      display: block;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
