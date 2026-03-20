@@ -25,7 +25,6 @@ export const Navbar: React.FC = () => {
                 <a href="#presentation">Présentation</a>
                 <a href="#formations">Formations</a>
                 <a href="#CePortfolio">Portfolio</a>
-                <a href="#experiences">Expériences</a>
                 <a href="#realisations">Réalisations</a>
             </div>
 
