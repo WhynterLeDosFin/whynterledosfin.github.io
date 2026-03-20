@@ -14,7 +14,7 @@
     left: 50%;
     width: 4px;
     height: 100%;
-    background-color: $primary-color;
+    background: linear-gradient(0deg,rgba(54, 91, 255, 0) 0%, rgba(54, 91, 255, 1) 50%, rgba(54, 91, 255, 0) 100%);
     z-index: 1;
     display: none;
   }
