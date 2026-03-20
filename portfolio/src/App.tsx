@@ -10,6 +10,7 @@ import Choices from "./components/Choices";
 import ProgressIndicator from "./components/ProgressIndicator";
 import Works from "./components/Works";
 import { academicSteps } from "./assets/data/academicSteps";
+import Experience from "./components/Experience";
 
 function App() {
     return (
@@ -42,12 +43,7 @@ function App() {
                 </div>
             </div>
         </Section>
-        <Section title={"Formations"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
-            <div id="formations">
-                <Timeline items={academicSteps} />
-            </div>
-        </Section>
-        <Section title={"Ce portfolio"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
+        <Section title={"Ce portfolio"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
             <div id="CePortfolio">
                 <div className="Choices">
                     <Choices/>
@@ -57,7 +53,17 @@ function App() {
                 </div>
             </div>
         </Section>
-        <Section title={"Réalisations"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
+        <Section title={"Formations"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
+            <div id="formations">
+                <Timeline items={academicSteps} />
+            </div>
+        </Section>
+        <Section title={"Expériences"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
+            <div id="experiences">
+                <Experience/>
+            </div>
+        </Section>
+        <Section title={"Réalisations"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
             <div id="realisations">
                 <Works/>
             </div>
