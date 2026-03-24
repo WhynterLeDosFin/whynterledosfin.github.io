@@ -1,0 +1,144 @@
+@import '../../styles/variables';
+
+.contactContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.formSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.input, .textarea, input:-webkit-autofill,
+{
+  flex: 1;
+  background: rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  border: none;
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #FFFFFF;
+  -webkit-box-shadow: 0 0 30px 1000px RGB(11,32,48) inset;
+  -webkit-border-radius: 0;
+};
+
+.textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+.submitBtn {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 4%);
+  }
+
+  &:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.successMsg {
+  color: #10b981;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.errorMsg {
+  color: #ef4444;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.textSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: $primary-color;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+
+  p {
+    margin: 0;
+  }
+}

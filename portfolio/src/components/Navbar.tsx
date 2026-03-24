@@ -23,9 +23,11 @@ export const Navbar: React.FC = () => {
         <div className={`${styles.navbarContainer} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.navbarSections}>
                 <a href="#presentation">Présentation</a>
-                <a href="#formations">Formations</a>
                 <a href="#CePortfolio">Portfolio</a>
+                <a href="#formations">Formations</a>
+                <a href="#experiences">Expériences</a>
                 <a href="#realisations">Réalisations</a>
+                <a href="#contact">Contact</a>
             </div>
 
             <div className={styles.burger} onClick={toggleMenu}>
@@ -34,10 +36,11 @@ export const Navbar: React.FC = () => {
 
             <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
                 <a href="#presentation" onClick={closeMenu}>Présentation</a>
-                <a href="#formations" onClick={closeMenu}>Formations</a>
                 <a href="#CePortfolio" onClick={closeMenu}>Portfolio</a>
+                <a href="#formations" onClick={closeMenu}>Formations</a>
                 <a href="#experiences" onClick={closeMenu}>Expériences</a>
                 <a href="#realisations" onClick={closeMenu}>Réalisations</a>
+                <a href="#contact" onClick={closeMenu}>Contact</a>
             </div>
 
             {isOpen && <div className={styles.overlay} onClick={closeMenu}></div>}
