@@ -37,14 +37,14 @@ const ContactForm: React.FC = () => {
                         <input
                             type="email"
                             name="email"
-                            placeholder="Renseignez votre adresse mail"
+                            placeholder="Renseignez votre adresse mail *"
                             required
                             className={styles.input}
                         />
                         <input
                             type="text"
                             name="name"
-                            placeholder="Renseignez votre nom/prénom"
+                            placeholder="Renseignez votre nom/prénom *"
                             required
                             className={styles.input}
                         />
@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
                     <div className={styles.row}>
                         <input
                             type="text"
-                            name="address"
+                            name="subject"
                             placeholder="Renseignez l'objet/sujet"
                             className={styles.input}
                         />

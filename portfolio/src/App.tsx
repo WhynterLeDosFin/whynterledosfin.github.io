@@ -50,7 +50,7 @@ function App() {
                     <Choices/>
                 </div>
                 <div className="Progress">
-                    <ProgressIndicator progress={60} strokeWidth={20} duration={1500}/>
+                    <ProgressIndicator progress={63.33} strokeWidth={20} duration={1500}/>
                 </div>
             </div>
         </Section>
