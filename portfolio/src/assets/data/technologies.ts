@@ -12,6 +12,7 @@ import mariadb from "../logo/mariadb.png";
 import csharp from "../logo/csharp.png";
 import git from "../logo/git.png";
 import figma from "../logo/figma.png";
+import postman from "../logo/postman.png";
 
 export interface Project {
     id: string;
@@ -354,4 +355,22 @@ export const technologies: Technology[] = [
             }
         ]
     },
+    {
+        id: "postman",
+        name: "Postman",
+        logo: postman,
+        opportunities: [
+            {
+                id: "postman-global",
+                name: "Professionnel & Personnel",
+                projects: [
+                    {
+                        id: "p1",
+                        title: "API Test",
+                        description: "Rédactions de requêtes HTTP afin de tester mon/mes microservice(s). Création de collection afin d'organiser mes endpoints et leurs différents retours. Partage de collections afin de centraliser l'information/documentation."
+                    }
+                ]
+            }
+        ]
+    }
 ];
