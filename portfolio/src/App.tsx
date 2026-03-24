@@ -9,6 +9,8 @@ import {Timeline} from "./components/Timeline";
 import Choices from "./components/Choices";
 import ProgressIndicator from "./components/ProgressIndicator";
 import Works from "./components/Works";
+import ContactForm from "./components/ContactForm";
+import Experience from "./components/Experience";
 import { academicSteps } from "./assets/data/academicSteps";
 import Experience from "./components/Experience";
 
@@ -38,7 +40,7 @@ function App() {
                 <div className="Intro-right">
                     <div className="Picture-container"/>
                     <div className="Typewriter-container">
-                        <Typewriter texts={["j'ai 27 ans","J'habite à Lille","J'aime développer","J'adore conceptualiser","J'aime le défi (̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄","Je suis créatif","j'aime bien la photo aussi :p"]} />
+                        <Typewriter texts={["J'ai 27 ans","J'habite à Lille","J'aime développer","J'adore conceptualiser","J'aime le défi (̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄","Je suis créatif","J'aime bien la photo aussi :p"]} />
                     </div>
                 </div>
             </div>
@@ -49,7 +51,7 @@ function App() {
                     <Choices/>
                 </div>
                 <div className="Progress">
-                    <ProgressIndicator progress={60} strokeWidth={20} duration={1500}/>
+                    <ProgressIndicator progress={63.33} strokeWidth={20} duration={1500}/>
                 </div>
             </div>
         </Section>
@@ -68,8 +70,10 @@ function App() {
                 <Works/>
             </div>
         </Section>
+        <Section title={""} background={theme.colors.thirdBackground} fontColor={"#FFFFFF"}>
+            <ContactForm />
+        </Section>
     </div>
   );
 }
-
 export default App;
