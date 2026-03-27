@@ -12,7 +12,6 @@ import Works from "./components/Works";
 import ContactForm from "./components/ContactForm";
 import Experience from "./components/Experience";
 import { academicSteps } from "./assets/data/academicSteps";
-import Experience from "./components/Experience";
 
 function App() {
     return (

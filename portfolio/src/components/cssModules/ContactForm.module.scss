@@ -121,12 +121,16 @@ input:-webkit-autofill:focus {
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
   color: $primary-color;
   margin: 0;
   line-height: 1;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 9vw;
+  }
 }
 
 .description {
