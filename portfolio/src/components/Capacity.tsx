@@ -2,23 +2,49 @@ import React, { useState } from 'react';
 import styles from './cssModules/Capacity.module.scss';
 import { capacities, Capacity } from '../assets/data/capacities';
 import { MdExpandMore, MdExpandLess } from 'react-icons/md';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CapacityCard: React.FC<{ capacity: Capacity }> = ({ capacity }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const maxInitialSkills = 4;
     const hasMore = capacity.skills.length > maxInitialSkills;
-    const displayedSkills = isExpanded ? capacity.skills : capacity.skills.slice(0, maxInitialSkills);
+    const initialSkills = capacity.skills.slice(0, maxInitialSkills);
+    const extraSkills = capacity.skills.slice(maxInitialSkills);
 
     return (
-        <div className={`${styles.capacityCard} ${isExpanded ? styles.isExpanded : ''}`}>
-            <h3>{capacity.title}</h3>
+        <motion.div
+            layout
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+            className={`${styles.capacityCard} ${isExpanded ? styles.isExpanded : ''}`}
+        >
+            <motion.h3 layout="position">{capacity.title}</motion.h3>
             <ul className={styles.skillsList}>
-                {displayedSkills.map((skill, index) => (
-                    <li key={index}>{skill}</li>
+                {initialSkills.map((skill, index) => (
+                    <motion.li
+                        layout="position"
+                        key={`initial-${index}`}
+                    >
+                        {skill}
+                    </motion.li>
                 ))}
+                <AnimatePresence initial={false}>
+                    {isExpanded && extraSkills.map((skill, index) => (
+                        <motion.li
+                            key={`extra-${index}`}
+                            initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                            animate={{ opacity: 1, height: 'auto', marginTop: '0.75rem' }}
+                            exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                            transition={{ duration: 0.3 }}
+                            style={{ overflow: 'hidden' }}
+                        >
+                            {skill}
+                        </motion.li>
+                    ))}
+                </AnimatePresence>
             </ul>
             {hasMore && (
-                <button
+                <motion.button
+                    layout="position"
                     className={styles.expandButton}
                     onClick={() => setIsExpanded(!isExpanded)}
                 >
@@ -31,19 +57,19 @@ const CapacityCard: React.FC<{ capacity: Capacity }> = ({ capacity }) => {
                             Voir plus <MdExpandMore size={24} />
                         </>
                     )}
-                </button>
+                </motion.button>
             )}
-        </div>
+        </motion.div>
     );
 };
 
 const Capacities: React.FC = () => {
     return (
-        <div className={styles.capacitiesContainer}>
+        <motion.div layout className={styles.capacitiesContainer}>
             {capacities.map((capacity, index) => (
                 <CapacityCard key={index} capacity={capacity} />
             ))}
-        </div>
+        </motion.div>
     );
 };
 
