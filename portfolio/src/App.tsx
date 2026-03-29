@@ -11,8 +11,8 @@ import ProgressIndicator from "./components/ProgressIndicator";
 import Works from "./components/Works";
 import ContactForm from "./components/ContactForm";
 import Experience from "./components/Experience";
+import Capacities from "./components/Capacity";
 import { academicSteps } from "./assets/data/academicSteps";
-import Experience from "./components/Experience";
 
 function App() {
     return (
@@ -51,7 +51,7 @@ function App() {
                     <Choices/>
                 </div>
                 <div className="Progress">
-                    <ProgressIndicator progress={63.33} strokeWidth={20} duration={1500}/>
+                    <ProgressIndicator progress={71.66} strokeWidth={20} duration={1500}/>
                 </div>
             </div>
         </Section>
@@ -68,6 +68,11 @@ function App() {
         <Section title={"Réalisations"} background={theme.colors.gradientBackgroundReversed} fontColor={"#FFFFFF"}>
             <div id="realisations">
                 <Works/>
+            </div>
+        </Section>
+        <Section title={"Que puis-je faire pour vous ?"} background={theme.colors.gradientBackground} fontColor={"#FFFFFF"}>
+            <div id="capacities">
+                <Capacities/>
             </div>
         </Section>
         <Section title={""} background={theme.colors.thirdBackground} fontColor={"#FFFFFF"}>
