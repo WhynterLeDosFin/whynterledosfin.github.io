@@ -34,7 +34,7 @@ export const Section: React.FC<SectionProps> = ({ title, children, background, f
         };
     }, []);
     return (
-        <section style={{ background, color: fontColor }}>
+        <section className={styles.section} style={{ background, color: fontColor }}>
             <p ref={titleRef} className={`${styles.sectionTitle} ${isVisible ? styles.animateIn : ''}`}>
                 {title}
             </p>

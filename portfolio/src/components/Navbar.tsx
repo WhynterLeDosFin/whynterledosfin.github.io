@@ -27,6 +27,7 @@ export const Navbar: React.FC = () => {
                 <a href="#formations">Formations</a>
                 <a href="#experiences">Expériences</a>
                 <a href="#realisations">Réalisations</a>
+                <a href="#capacities">Compétences</a>
                 <a href="#contact">Contact</a>
             </div>
 
@@ -40,6 +41,7 @@ export const Navbar: React.FC = () => {
                 <a href="#formations" onClick={closeMenu}>Formations</a>
                 <a href="#experiences" onClick={closeMenu}>Expériences</a>
                 <a href="#realisations" onClick={closeMenu}>Réalisations</a>
+                <a href="#capacities" onClick={closeMenu}>Compétences</a>
                 <a href="#contact" onClick={closeMenu}>Contact</a>
             </div>
 
